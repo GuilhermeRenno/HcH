@@ -1,0 +1,21 @@
+body{
+    font:18pt normal Arial;
+    background-color
+}
+header{
+    text-align:
+}
+section{
+    align-items: center;
+    background-color: rgb(7, 131, 240);
+    width: 500px;
+    height: 500px;
+    text-align: center;
+    margin: auto;
+    border-radius: 5%;
+}
+#Entrar{
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
