@@ -1,0 +1,16 @@
+#iconeUser{
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+}
+#imgLogo{
+    width: 60px;
+    height: 60px;
+}
+#logo{
+    float: left;
+}
+#userInfo{
+    text-align: end;
+
+}
