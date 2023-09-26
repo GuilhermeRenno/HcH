@@ -13,16 +13,27 @@
       <section>
       
         <div id="Entrar">
-            <label>Login</label>
-            <input id="campoLogin" type="text">
-            <h3>Senha</h3>
-            <input id="campoSenha" type="password">
-            <h3>Usuário</h3>
-            <select id="UserSelection"name="Usuario">
-                    <option value="medico">Medico</option>
-                    <option value="paciente">Paciente</option>
-            </select>
-            <input id="BTCentrar" value= "Entrar" type="button" onclick="selecionar()">
+            <span>
+                <img id="imagem" alt="icone de Login"src="https://th.bing.com/th/id/R.02b24b363c028a74d3d4f6936ad1f435?rik=jSIBgtzEnsU9Cw&riu=http%3a%2f%2fcdn.onlinewebfonts.com%2fsvg%2fimg_86362.png&ehk=5yTUZ3KLZCaIq%2bAHR%2fcXRoY814rzMig2tvUczpRgjbM%3d&risl=&pid=ImgRaw&r=0">
+            </span>
+            <span id="spanLogin">
+                <label>Login: </label>
+                <input id="campoLogin" type="text">
+            </span>
+            <span id="spanSenha">
+                <label>Senha: </label>
+                <input id="campoSenha" type="password">
+            </span>
+            <span id="spanUser">
+                <label>Usuário: </label>
+                    <select id="UserSelection"name="Usuario">
+                        <option value="medico">Medico</option>
+                        <option value="paciente">Paciente</option>
+                    </select>
+            </span>
+            <span>
+                <input id="BTCentrar" value= "Entrar" type="button" onclick="selecionar()">
+            </span>
         </div>
      </section>
     <footer>

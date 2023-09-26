@@ -5,7 +5,7 @@ function selecionar(){
         window.location.href = "paginaMedico.html";
         console.log(window.location.href)
     }
-    else if(selecao='paciente'){
+    else{
         window.location.href = "paginaPaciente.html";
         console.log(window.location.href)
     }
