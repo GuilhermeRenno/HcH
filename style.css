@@ -8,7 +8,7 @@ header{
 section{
     align-items: center;
     background-color: rgb(7, 131, 240);
-    width: 500px;
+    width: 800px;
     height: 500px;
     text-align: center;
     margin: auto;
@@ -17,5 +17,14 @@ section{
 #Entrar{
     display: flex;
     flex-direction: column;
-    margin-top: 20px;
+    margin: 100px;
+}
+#imagem{
+    size-adjust: 50px;
+}
+label{
+    display: inline;
+}
+input{
+    display: inline;
 }
