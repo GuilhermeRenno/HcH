@@ -5,8 +5,8 @@ body{
 header{
     position: sticky;
     top: 0;
-    background-color: aqua;
-    margin: -12px;
+    background-color: #088C7F;
+
 }
 #iconeUser{
     width: 50px;
@@ -16,9 +16,11 @@ header{
 
 }
 #imgLogo{
-    width: 50px;
-    height: 50px;
-    margin: 20px;
+
+    /**proporcao 16:10**/
+    width: 114px;
+    height: 70px;
+    margin: 7px;
 }
 
 #userInfo{
@@ -28,7 +30,7 @@ header{
 }
 section{
     align-items: center;
-    background-color: rgb(35, 141, 167);
+    background-color: #088C7F;
     width: 400px;
     height: 400px;
     text-align: center;
@@ -52,3 +54,11 @@ input{
     display: inline;
     width: 100px;
 }
+.nav>li>a {
+    color: rgb(249, 6, 6);
+  }
+  .nav-pills>li.active>a,
+  .nav-pills>li.active>a:hover, 
+  .nav-pills>li.active>a:focus { 
+    background-color: #f60202; 
+  }
