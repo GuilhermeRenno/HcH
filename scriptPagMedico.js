@@ -1,5 +1,5 @@
 function listar(){
-var d = document.getElementById("listaPaciente");
+    const d = document.getElementById("listaPaciente");
                 var ul = document.createElement("ul");
             
                     var li = document.createElement("li");
@@ -11,17 +11,14 @@ var d = document.getElementById("listaPaciente");
                     btnEditar.innerHTML = "Editar";
                     btnExcluir.innerHTML ="Excluir";
                     
-
                 
                     ul.appendChild(li);
                     li.appendChild(nome);
                     li.appendChild(btnEditar);
                     li.appendChild(btnExcluir);
                 
-                
             
                 d.appendChild(ul);
-            
-
-
+                   
         };
+ 
