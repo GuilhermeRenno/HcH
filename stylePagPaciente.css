@@ -3,6 +3,10 @@ header{
     top: 0;
     background-color:#088C7F;
     font: optional;
+    border-bottom: 1px solid;
+    border-bottom-right-radius: 10px;    
+    border-bottom-left-radius: 10px;  
+
 
     /* cor fundo escura verde #088C7F
        cor clara fundo #CDFFD8 
@@ -32,7 +36,41 @@ header{
     
     margin-right: 20px;
 }
-.nav>li>a {
+#listaPaciente{
+    background-color: #088C7F;
+    width: auto;
+    height: auto;
+    min-height:390px;
+    margin: 20px;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+footer{
+    background-color:#088C7F;
+    font: optional;
+    width: auto;
+   /** border-top: 1px solid #333;**/
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    min-height: 180px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+#rodape{
+    text-align: center;
+    float: right;
+    display:grid;
+    padding: 20px;
+}
+#logoFepi{
+    width: 146px;
+    height: 123px;
+    float: left;
+    margin: 20px;
+}
+/**.nav>li>a {
     color: gray;
   }
   .nav-pills>li.active>a,

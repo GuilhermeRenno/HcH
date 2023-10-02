@@ -3,6 +3,7 @@ function listar(){
                 var ul = document.createElement("ul");
             
                     var li = document.createElement("li");
+                    
                     var nome = document.createElement("h3");
                     var btnEditar = document.createElement("button");
                     var btnExcluir = document.createElement("button");
@@ -13,6 +14,7 @@ function listar(){
                     
                 
                     ul.appendChild(li);
+                    
                     li.appendChild(nome);
                     li.appendChild(btnEditar);
                     li.appendChild(btnExcluir);

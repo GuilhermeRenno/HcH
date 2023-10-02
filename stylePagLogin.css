@@ -55,7 +55,23 @@ input{
     display: inline;
     width: 100px;
 }
-.nav>li>a {
+
+footer{
+    background-color:#088C7F;
+    font: optional;
+    width: auto;
+   /** border-top: 1px solid #333;**/
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    min-height: 150px;
+}
+#rodape{
+    text-align: center;
+    align-items: center;
+}
+
+/**.nav>li>a {
     color: rgb(249, 6, 6);
   }
   .nav-pills>li.active>a,
