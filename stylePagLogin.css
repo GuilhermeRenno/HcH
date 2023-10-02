@@ -43,6 +43,7 @@ section{
     display: flex;
     flex-direction: column;
     margin: 100px;
+    
 }
 span{
     margin: 10px;
@@ -69,6 +70,7 @@ footer{
     border-top-right-radius: 10px;
     border-top-left-radius: 10px;
     text-align: center;
+    position: fixed;
 }
 #rodape{
     width: auto;
