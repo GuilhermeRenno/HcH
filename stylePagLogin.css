@@ -33,10 +33,11 @@ section{
     align-items: center;
     background-color: #088C7F;
     width: 400px;
-    height: 400px;
+    height: 350px;
     text-align: center;
     margin: auto;
     border-radius: 5%;
+    
 }
 #Entrar{
     display: flex;
@@ -56,8 +57,33 @@ input{
     width: 100px;
 }
 
-
-
+footer{
+    background-color:#088C7F;
+    font: optional;
+    width: auto;
+   /** border-top: 1px solid #333;**/
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    min-height: 180px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    text-align: center;
+}
+#rodape{
+    width: auto;
+    text-align: center;
+    float: right;
+    display:grid;
+    padding: 20px;
+    
+}
+#logoFepi{
+    width: 146px;
+    height: 123px;
+    float: left;
+    margin: 20px;
+}
 .nav>li>a {
     color: rgb(249, 6, 6);
   }
