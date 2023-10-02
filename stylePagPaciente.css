@@ -57,12 +57,15 @@ footer{
     min-height: 180px;
     border-top-right-radius: 10px;
     border-top-left-radius: 10px;
+    text-align: center;
 }
 #rodape{
+    width: auto;
     text-align: center;
     float: right;
     display:grid;
     padding: 20px;
+    
 }
 #logoFepi{
     width: 146px;
