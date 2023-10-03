@@ -1,9 +1,9 @@
-  // Primeiro, obtenha os dados do formulário do armazenamento local e converta-os de volta em um array
+  // dados do formulário convertidos de volta em um array
   var arrayDados = JSON.parse(localStorage.getItem('formData'));
 
-  // Em seguida, obtenha a lista onde você quer escrever os dados
+  //  lista para escrever os dados
   var lista = document.getElementById('minhaLista');
-  
+ 
   // Agora, crie um elemento de lista para cada objeto de dados e adicione-o à lista
   for (var i = 0; i < arrayDados.length; i++) {
     var dados = arrayDados[i];
@@ -16,41 +16,41 @@
     nome.textContent = 'Nome: ' + dados['nome'];
     li.appendChild(nome);
   
-     // Adicione os outros dados do objeto a um elemento div oculto
-     var dados = document.createElement('div');
-    dados.className = 'dados'; // Adicione uma classe ao elemento div para estilização
-  
-    // Adicione o email na div detalhes
+     // Adiciona os outros dados na div oculta
+     var divDados = document.createElement('div');
+    dados.className = 'dados'; // nome da div oculta
+    divDados.style.display = 'none';  
+    // Adiciona o email na div detalhes
     var email = document.createElement('p');
     email.textContent = 'Email: ' + dados['email'];
-    dados.appendChild(email);
+    divDados.appendChild(email);
   
-    // Adicione o endereço na div detalhes
+    // adiciona o endereço na div detalhes
     var endereco = document.createElement('p');
     endereco.textContent = 'Endereço: ' + dados['endereco'];
-    dados.appendChild(endereco);
+    divDados.appendChild(endereco);
   
-    // Adicione o celular na div detalhes
+    // Adiciona o celular na div detalhes
     var celular = document.createElement('p');
     celular.textContent = 'Celular: ' + dados['celular'];
-    dados.appendChild(celular);
+    divDados.appendChild(celular);
   
-    // Adicione o tipo sanguíneo na div detalhes
+    // Adiciona o tipo sanguíneo na div detalhes
     var tipo_sanguineo = document.createElement('p');
     tipo_sanguineo.textContent = 'Tipo Sanguíneo: ' + dados['tipo_sanguineo'];
-    dados.appendChild(tipo_sanguineo);
+    divDados.appendChild(tipo_sanguineo);
   
-    li.appendChild(dados);
+    li.appendChild(divDados);
   
     //botão de detalhes que mostra ou oculta os outros dados quando clicado
     var detalhesButton = document.createElement('button');
     detalhesButton.textContent = 'Detalhes';
     detalhesButton.addEventListener('click', function(e) {
-      var dados = e.target.parentElement.getElementsByClassName('dados')[0];
-      if (dados.style.display === 'none') {
-        dados.style.display = 'block';
+      var dados = e.target.parentElement.getElementsByClassName('divDadosdados')[0];
+      if (divDados.style.display === 'none') {
+        divDados.style.display = 'block';
       } else {
-        dados.style.display = 'none';
+        divDados.style.display = 'none';
       }
     });
     li.appendChild(detalhesButton);

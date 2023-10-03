@@ -22,7 +22,7 @@ form.addEventListener('submit', function(event) {
 
   // lista pra armazenar os dados
   var dados = {};
-
+    
   // laco para pegar os itens do forms
   for (var i = 0; i < form.elements.length; i++) {
 
@@ -31,7 +31,7 @@ form.addEventListener('submit', function(event) {
       dados[form.elements[i].name] = form.elements[i].value;
     }
   }
-
+  
  // pega os que ja tiver salvo, pra manter a lista completa e se nao tiver nada seta como vazio
  var existingDados = JSON.parse(localStorage.getItem('formData')) || [];
 
@@ -44,7 +44,7 @@ form.addEventListener('submit', function(event) {
 
     // substituir o antigo pelo novo
     existingDados[index] = dados;
-
+    
     // limpar a variavel de edicao depois de editar 
     localStorage.removeItem('editDados');
   } else {
