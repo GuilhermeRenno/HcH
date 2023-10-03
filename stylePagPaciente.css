@@ -73,6 +73,26 @@ footer{
     float: left;
     margin: 20px;
 }
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 10px;
+    padding: 10px;
+  }
+  .grid-item {
+    border: 1px solid black;
+    padding: 20px;
+    background-color: lightgray;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  th, td {
+    border: 1px solid black;
+    padding: 5px;
+    text-align: left;
+  }
 /**.nav>li>a {
     color: gray;
   }
