@@ -73,6 +73,14 @@ footer{
     float: left;
     margin: 20px;
 }
+
+.item {
+    margin-bottom: 1em;
+  }
+  .dados {
+    margin-bottom: 0.5em;
+    display: none; /* Esconda os detalhes por padrão */
+  }
 /**.nav>li>a {
     color: gray;
   }
