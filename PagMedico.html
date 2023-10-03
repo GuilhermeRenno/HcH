@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    
     <link rel="stylesheet" href="stylePagMedico.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
@@ -29,7 +28,7 @@
     </header>
     <section>
         <div id="listaPaciente">
-            <h2>Lista de Dados do Formulário</h2>
+            <h2>Lista de Pacientes</h2>
                 <button id="voltar">Adicionar novos pacientes</button>
             <ul id="minhaLista"></ul>
             
@@ -37,96 +36,7 @@
         </div>
     </section>
     <script>
-        // Primeiro, obtenha os dados do formulário do armazenamento local e converta-os de volta em um array
-        var dataArray = JSON.parse(localStorage.getItem('formData'));
-
-// Em seguida, obtenha a lista onde você quer escrever os dados
-var lista = document.getElementById('minhaLista');
-
-// Agora, crie um elemento de lista para cada objeto de dados e adicione-o à lista
-for (var i = 0; i < dataArray.length; i++) {
-  var data = dataArray[i];
-  var li = document.createElement('li');
-  li.id = i; // Adicione um id ao elemento li para referência futura
-  li.className = 'item'; // Adicione uma classe ao elemento li para estilização
-
-  // Adicione o nome ao elemento li
-  var nome = document.createElement('div');
-  nome.textContent = 'Nome: ' + data['nome'];
-  li.appendChild(nome);
-
-   // Adicione os outros dados do objeto a um elemento div oculto
-   var dados = document.createElement('div');
-  dados.className = 'dados'; // Adicione uma classe ao elemento div para estilização
-
-  // Adicione o email na div detalhes
-  var email = document.createElement('p');
-  email.textContent = 'Email: ' + data['email'];
-  dados.appendChild(email);
-
-  // Adicione o endereço na div detalhes
-  var endereco = document.createElement('p');
-  endereco.textContent = 'Endereço: ' + data['endereco'];
-  dados.appendChild(endereco);
-
-  // Adicione o celular na div detalhes
-  var celular = document.createElement('p');
-  celular.textContent = 'Celular: ' + data['celular'];
-  dados.appendChild(celular);
-
-  // Adicione o tipo sanguíneo na div detalhes
-  var tipo_sanguineo = document.createElement('p');
-  tipo_sanguineo.textContent = 'Tipo Sanguíneo: ' + data['tipo_sanguineo'];
-  dados.appendChild(tipo_sanguineo);
-
-  li.appendChild(dados);
-
-  //botão de detalhes que mostra ou oculta os outros dados quando clicado
-  var detalhesButton = document.createElement('button');
-  detalhesButton.textContent = 'Detalhes';
-  detalhesButton.addEventListener('click', function(e) {
-    var dados = e.target.parentElement.getElementsByClassName('dados')[0];
-    if (dados.style.display === 'none') {
-      dados.style.display = 'block';
-    } else {
-      dados.style.display = 'none';
-    }
-  });
-  li.appendChild(detalhesButton);
-
-  // botao de excluir
-  var deleteButton = document.createElement('button');
-  deleteButton.textContent = 'Excluir';
-  deleteButton.addEventListener('click', function(e) {
-
-    // botão excluir clicado, remove o item da lista e atualiza o armazenamento local
-    dataArray.splice(e.target.parentElement.id, 1);
-    localStorage.setItem('formData', JSON.stringify(dataArray));
-
-    // remove da lista
-    e.target.parentElement.remove();
-  });
-  li.appendChild(deleteButton);
-
-  // botao de editar
-  var editButton = document.createElement('button');
-  editButton.textContent = 'Editar';
-  editButton.addEventListener('click', function(e) {
-
-    // botao de edicao clicado, armazena os dados localmente para edição
-    localStorage.setItem('editDados', JSON.stringify(dataArray[e.target.parentElement.id]));
-    // envia o usuario para a pagina de edicao
-    window.location.href = 'PadAddPacientes.html';
-  });
-  li.appendChild(editButton);
-
-  lista.appendChild(li);
-}
-
-// botao para voltar a página do formulário
-document.getElementById('voltar').addEventListener('click', function() {
-  window.location.href = 'PadAddPacientes.html';
-});
+      
         </script>
         
     <footer>
@@ -137,5 +47,6 @@ document.getElementById('voltar').addEventListener('click', function() {
         <img id="logoFepi"src="logo-FEPI-rodape.png" alt="logo Fepi">
     </footer>
 </body>
+<script src="scriptAddLista .js"></script>
 
 </html>
