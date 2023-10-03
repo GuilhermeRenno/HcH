@@ -93,6 +93,30 @@ footer{
     padding: 5px;
     text-align: left;
   }
+  /**quadro de tratamento**/
+  .tratamento-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; 
+    gap: 10px;
+  }
+  
+  .tratamento-item {
+    border: 1px solid black;
+    padding: 20px;
+    background-color: lightgray;
+  }
+   /**quadro de alarmes**/
+  .alarme-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+  }
+  
+  .alarme-item {
+    border: 1px solid black;
+    padding: 20px;
+    background-color: lightgray;
+  }
 /**.nav>li>a {
     color: gray;
   }

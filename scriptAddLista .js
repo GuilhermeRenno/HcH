@@ -6,7 +6,9 @@
  
   // Agora, crie um elemento de lista para cada objeto de dados e adicione-o à lista
   for (var i = 0; i < arrayDados.length; i++) {
+    
     var dados = arrayDados[i];
+
     var li = document.createElement('li');
     li.id = i; // Adicione um id ao elemento li para referência futura
     li.className = 'item'; // Adicione uma classe ao elemento li para estilização
@@ -18,7 +20,7 @@
   
      // Adiciona os outros dados na div oculta
      var divDados = document.createElement('div');
-    dados.className = 'dados'; // nome da div oculta
+    divDados.className = 'dados'; // nome da div oculta
     divDados.style.display = 'none';  
     // Adiciona o email na div detalhes
     var email = document.createElement('p');
@@ -46,11 +48,11 @@
     var detalhesButton = document.createElement('button');
     detalhesButton.textContent = 'Detalhes';
     detalhesButton.addEventListener('click', function(e) {
-      var dados = e.target.parentElement.getElementsByClassName('divDadosdados')[0];
-      if (divDados.style.display === 'none') {
-        divDados.style.display = 'block';
+      var dados = e.target.parentElement.getElementsByClassName('dados')[0];
+      if (dados.style.display === 'none') {
+        dados.style.display = 'block';
       } else {
-        divDados.style.display = 'none';
+        dados.style.display = 'none';
       }
     });
     li.appendChild(detalhesButton);
