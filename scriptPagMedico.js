@@ -61,12 +61,12 @@
 var form = document.getElementById('addPaciente');
 
 // verifica o arquivo de edicao
-var editData = JSON.parse(localStorage.getItem('editData'));
-if (editData) {
+var editDados = JSON.parse(localStorage.getItem('editDados'));
+if (editDados) {
   // preenche com o que tem no arquivo de edicao 
-  for (var preenche in editData) {
+  for (var preenche in editDados) {
     if (form.elements.namedItem(preenche)) {
-      form.elements.namedItem(preenche).value = editData[preenche];
+      form.elements.namedItem(preenche).value = editDados[preenche];
     }
   }
 }
@@ -90,18 +90,18 @@ form.addEventListener('submit', function(event) {
  // pega os que ja tiver salvo, pra manter a lista completa e se nao tiver nada seta como vazio
  var existingData = JSON.parse(localStorage.getItem('formData')) || [];
 
- if (editData) {
+ if (editDados) {
 
     // achar pelo indice na lista ao editar
     var index = existingData.findIndex(function(item) {
-      return JSON.stringify(item) === JSON.stringify(editData);
+      return JSON.stringify(item) === JSON.stringify(editDados);
     });
 
     // substituir o antigo pelo novo
     existingData[index] = data;
 
     // limpar a variavel de edicao depois de editar 
-    localStorage.removeItem('editData');
+    localStorage.removeItem('editDados');
   } else {
 
     // se nao for edicao, adiciona os dados normalmente
