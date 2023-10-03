@@ -117,11 +117,14 @@ footer{
     padding: 20px;
     background-color: lightgray;
   }
-/**.nav>li>a {
-    color: gray;
+  #btnHistorico{
+    width: 200px;
+    height: 123.6px;
+   
   }
-  .nav-pills>li.active>a,
-  .nav-pills>li.active>a:hover, 
-  .nav-pills>li.active>a:focus { 
-    background-color: #000; 
+  #divHistorico{
+ 
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
   }
