@@ -81,6 +81,19 @@ footer{
     margin-bottom: 0.5em;
     display: none; /* Esconda os detalhes por padrão */
   }
+  /*.item {
+    display: flex;
+    justify-content: space-between;
+    
+  }*/
+  
+  .nome {
+    flex-grow: 1;
+  }
+  
+  button {
+    margin-left: 10px;
+  }
 /**.nav>li>a {
     color: gray;
   }

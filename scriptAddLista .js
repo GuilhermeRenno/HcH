@@ -15,6 +15,7 @@
   
     // Adicione o nome ao elemento li
     var nome = document.createElement('div');
+    nome.className = 'nome'; // Adicione a classe 'nome'
     nome.textContent = 'Nome: ' + dados['nome'];
     li.appendChild(nome);
   
@@ -41,8 +42,62 @@
     var tipo_sanguineo = document.createElement('p');
     tipo_sanguineo.textContent = 'Tipo Sanguíneo: ' + dados['tipo_sanguineo'];
     divDados.appendChild(tipo_sanguineo);
-  
+
     li.appendChild(divDados);
+
+// Verifica se o array de tratamentos existe, se não, incia vazio
+if (!dados.tratamentos) {
+  dados.tratamentos = ['teste'];
+}
+// Cria uma nova div para os tratamentos
+var divTratamentos = document.createElement('div');
+divTratamentos.className = 'tratamentos'; // nome da div de tratamentos
+divTratamentos.style.display = 'none'; // inicialmente oculta
+
+
+//adiciona os tratamentos na div tratamento
+ for (var j = 0; j < dados.tratamentos.length; j++) {
+  var tratamentoData = dados.tratamentos[j];
+  var tratamentoDiv = document.createElement('div');
+
+  var nomeTratamento = document.createElement('p');
+  nomeTratamento.textContent = 'Nome do Tratamento: ' + tratamentoData['nomeTratamento'];
+  tratamentoDiv.appendChild(nomeTratamento);
+
+  var medicamentos = document.createElement('p');
+  medicamentos.textContent = 'Medicamentos: ' + tratamentoData['medicamentos'];
+  tratamentoDiv.appendChild(medicamentos);
+
+  var receita = document.createElement('p');
+  receita.textContent = 'Receita: ' + tratamentoData['receita'];
+  tratamentoDiv.appendChild(receita);
+
+  var procedimentos = document.createElement('p');
+  procedimentos.textContent = 'Procedimentos: ' + tratamentoData['procedimentos'];
+  tratamentoDiv.appendChild(procedimentos);
+
+  var duracao = document.createElement('p');
+  duracao.textContent = 'Duração: ' + tratamentoData['duracao'];
+  tratamentoDiv.appendChild(duracao);
+
+  divTratamentos.appendChild(tratamentoDiv);
+}
+
+  li.appendChild(divTratamentos);
+
+
+    // Botão de tratamentos que mostra ou oculta os tratamentos quando clicado
+var tratamentosButton = document.createElement('button');
+tratamentosButton.textContent = 'Tratamentos';
+tratamentosButton.addEventListener('click', function(e) {
+  var tratamentos = e.target.parentElement.getElementsByClassName('tratamentos')[0];
+  if (tratamentos.style.display === 'none') {
+    tratamentos.style.display = 'block';
+  } else {
+    tratamentos.style.display = 'none';
+  }
+});
+li.appendChild(tratamentosButton);
   
     //botão de detalhes que mostra ou oculta os outros dados quando clicado
     var detalhesButton = document.createElement('button');
