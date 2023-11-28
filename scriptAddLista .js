@@ -1,5 +1,6 @@
-  // dados do formulário convertidos de volta em um array
-  var arrayDados = JSON.parse(localStorage.getItem('formData'));
+fetch('http://127.0.0.1:8080/paciente')
+.then(resposta => resposta.json())
+.then(arrayDados => {
 
   //  lista para escrever os dados
   var lista = document.getElementById('minhaLista');
@@ -39,9 +40,9 @@
     divDados.appendChild(celular);
   
     // Adiciona o tipo sanguíneo na div detalhes
-    var tipo_sanguineo = document.createElement('p');
-    tipo_sanguineo.textContent = 'Tipo Sanguíneo: ' + dados['tipo_sanguineo'];
-    divDados.appendChild(tipo_sanguineo);
+    var tipoSanguineo = document.createElement('p');
+    tipoSanguineo.textContent = 'tipoSanguineo: ' + dados['tipoSanguineo'];
+    divDados.appendChild(tipoSanguineo);
 
     li.appendChild(divDados);
 
@@ -113,29 +114,45 @@ li.appendChild(tratamentosButton);
     li.appendChild(detalhesButton);
   
     // botao de excluir
-    var deleteButton = document.createElement('button');
-    deleteButton.textContent = 'Excluir';
-    deleteButton.addEventListener('click', function(e) {
-  
-      // botão excluir clicado, remove o item da lista e atualiza o armazenamento local
-      arrayDados.splice(e.target.parentElement.id, 1);
-      localStorage.setItem('formData', JSON.stringify(arrayDados));
-  
-      // remove da lista
-      e.target.parentElement.remove();
-    });
-    li.appendChild(deleteButton);
+var deleteButton = document.createElement('button');
+deleteButton.textContent = 'Excluir';
+deleteButton.addEventListener('click', function(e) {
+
+  // botão excluir clicado, remove o item da lista e atualiza o armazenamento local
+  arrayDados.splice(e.target.parentElement.id, 1);
+  localStorage.setItem('formData', JSON.stringify(arrayDados));
+
+  // remove da lista
+  e.target.parentElement.remove();
+
+  // faz uma requisição DELETE para a API para excluir o paciente
+  fetch('http://127.0.0.1:8080/paciente/' + dados.codigo, {
+    method: 'DELETE'
+  })
+  .then(resposta => {
+    if (resposta.ok) {
+      console.log('Paciente excluído com sucesso');
+    } else {
+      console.error('Erro ao excluir paciente:', resposta);
+    }
+  })
+  .catch(erro => console.error('Erro:', erro));
+});
+li.appendChild(deleteButton);
   
     // botao de editar
     var editButton = document.createElement('button');
     editButton.textContent = 'Editar';
-    editButton.addEventListener('click', function(e) {
-  
-      // botao de edicao clicado, armazena os dados localmente para edição
-      localStorage.setItem('editDados', JSON.stringify(arrayDados[e.target.parentElement.id]));
-      // envia o usuario para a pagina de edicao
-      window.location.href = 'PadAddPacientes.html';
-    });
+
+   // Quando o botão 'Editar' é clicado
+editButton.addEventListener('click', function(e) {
+  // Armazena os dados do paciente localmente para edição
+  var pacienteDados = arrayDados[e.target.parentElement.id];
+  localStorage.setItem('editDados', JSON.stringify(pacienteDados));
+
+  // Redireciona o usuário para a página de edição
+  window.location.href = 'PadAddPacientes.html';
+});
     li.appendChild(editButton);
   
     lista.appendChild(li);
@@ -145,3 +162,5 @@ li.appendChild(tratamentosButton);
   document.getElementById('voltar').addEventListener('click', function() {
     window.location.href = 'PadAddPacientes.html';
   });
+})
+.catch(erro => console.error('Erro:', erro));
